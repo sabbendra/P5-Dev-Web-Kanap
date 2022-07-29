@@ -22,12 +22,21 @@ fetch("http://localhost:3000/api/products/" + kanapId)
         kanapImg.setAttribute("alt",responseKanap.altTxt);
         const kanapImgContainer = document.querySelector(".item__img");
         kanapImgContainer.appendChild(kanapImg);
-        console.log(responseKanap);
 
         //Affichage du nom
-        let kanapName = responseKanap.name;
+        const kanapName = responseKanap.name;
         const productName = document.getElementById("title");
         productName.textContent = kanapName;
+
+        //Affichage du prix
+        const kanapprice = responseKanap.price;
+        const productprice = document.getElementById("price");
+        productprice.textContent = kanapprice;
+        
+        //Affichage de la description
+        const kanapdescription = responseKanap.description;
+        const productdescription = document.getElementById("description");
+        productdescription.textContent = kanapdescription;
         console.log(responseKanap);
 
         
