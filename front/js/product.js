@@ -22,29 +22,48 @@ fetch("http://localhost:3000/api/products/" + kanapId)
         kanapImg.setAttribute("alt",responseKanap.altTxt);
         const kanapImgContainer = document.querySelector(".item__img");
         kanapImgContainer.appendChild(kanapImg);
+        console.log(kanapImg);
 
         //Affichage du nom
         const kanapName = responseKanap.name;
         const productName = document.getElementById("title");
         productName.textContent = kanapName;
+        console.log(productName);
 
         //Affichage du prix
         const kanapprice = responseKanap.price;
         const productprice = document.getElementById("price");
         productprice.textContent = kanapprice;
-        
+        console.log(productprice);
+
         //Affichage de la description
         const kanapdescription = responseKanap.description;
         const productdescription = document.getElementById("description");
         productdescription.textContent = kanapdescription;
-        console.log(responseKanap);
+        console.log(productdescription);
 
+        //Affichage de la couleur
+        let select = document.getElementById("colors");
+        console.log(select);
+
+        console.log(responseKanap.colors);
+
+        responseKanap.colors.forEach((colorElement) => {
+            console.log(document.createElement("option"));
+            let tagOption = document.createElement("option");
+
+            tagOption.innerHTML = `${colorElement} `;
+            tagOption.value = `${colorElement} `;
+
+            select.appendChild(tagOption);
+            console.log(tagOption);
+        });
+
+        //Affichage de la quantité
         
     });
+    
 
-
-   /* Image ok
-    Titre ok
-    Prix ok
-    Description ok
-    Couleur ok */
+   /* 
+    Couleur ok
+    Quantité ok */
