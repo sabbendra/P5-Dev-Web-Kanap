@@ -60,10 +60,21 @@ fetch("http://localhost:3000/api/products/" + kanapId)
         });
 
         //Affichage de la quantité
+        let Quantityselect = document.getElementById("quantity");
+        console.log(Quantityselect);
+
+        if (quantity.value >= 1 <= 100) {
+            alert ("la quantité est ajoutée à votre panier")
+        } else {
+            alert ("Merci d'ajouter une quantité supérieur à zéro et infèrieur à 100")
+        }
+        console.log(Quantityselect);
         
     });
     
+    /* A vérifier avec Rudy
+    Couleur et quantité */
+   
+    // Valeur enregistrée quand on clique sur le bouton
 
-   /* 
-    Couleur ok
-    Quantité ok */
+    
